@@ -1,3 +1,25 @@
+## Pattern
+HashSet
+
+## Key Observation
+The only information we need is whether we've seen the current number before.
+
+## Algorithm
+1. Create an empty HashSet.
+2. Traverse the array.
+3. If the number exists in the set, return `True`.
+4. Otherwise add it to the set.
+5. If the loop finishes, return `False`.
+
+## Complexity
+- Time: O(n)
+- Space: O(n)
+
+## Takeaway
+Whenever the problem asks about duplicates or "seen before", consider a HashSet.
+
+
+
 <h2><a href="https://leetcode.com/problems/contains-duplicate">Contains Duplicate</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>
 
 <p>&nbsp;</p>
