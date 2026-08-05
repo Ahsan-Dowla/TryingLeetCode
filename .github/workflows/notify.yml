@@ -6,15 +6,21 @@ on:
       - main
 
 jobs:
-  dispatch:
+  notify:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger LeetCode-ADA
+      - name: Trigger ADA Sync
         run: |
           curl -L \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.SYNC_TOKEN }}" \
             https://api.github.com/repos/Ahsan-Dowla/LeetCode-ADA/dispatches \
-            -d '{"event_type":"leetcode-sync"}'
+            -d '{
+              "event_type":"leetcode-sync",
+              "client_payload":{
+                "member":"Ahsan",
+                "repo":"https://github.com/Ahsan-Dowla/TryingLeetCode.git"
+              }
+            }'
